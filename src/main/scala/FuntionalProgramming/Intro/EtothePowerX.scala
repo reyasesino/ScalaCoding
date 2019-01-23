@@ -7,15 +7,15 @@ object EtothePowerX extends App{
     if(number <=1 ) 1 else number * factorial(number-1)
   }
 
-  def exponential(input : Double) ={
+  def exponential(input : Float) ={
     var sum : Float =0
     Range(0, 10).foreach(i=>{
-      println(scala.math.pow(input,i), "----------------", factorial(i).toDouble)
+      println(scala.math.pow(input,i).toFloat, "----------------", factorial(i).toFloat)
       println(scala.math.pow(input,i)/factorial(i))
-      sum + (scala.math.pow(input,i)/factorial(i))
+      sum +=(scala.math.pow(input,i).toFloat/factorial(i).toFloat)
     })
-    sum
+    (sum*1000).round
   }
 
-  Console print exponential(5.0)
+  Console print exponential(5.0.toFloat)
 }
